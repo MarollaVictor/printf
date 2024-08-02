@@ -27,7 +27,7 @@ int _puts(char *str)
 int _putchar(int c)
 {
 	static int i;
-	static char buf(OUTPUT_BUF_SIZE);
+	static char buf[OUTPUT_BUF_SIZ];
 
 	if (c == BUF_FLUSH || i >= OUTPUT_BUF_SIZE)
 	{
