@@ -50,7 +50,7 @@ int (*get_specifier(char *s)) (va_list ap, params_t *params)
 
 int get_print_func(char *s, va_list ap, params_t *params)
 {
-	int (*f)(va_list, params_t *) = get_specifier(S);
+	int (*f)(va_list, params_t *) = get_specifier(s);
 
 	if (f)
 		return (f(ap, params));
@@ -138,5 +138,5 @@ char *get_width(char *s, params_t *params, va_list ap)
 			d = d * 10 + (*s++ - '0');
 	}
 	params->width = d;
-	return (S);
+	return (s);
 }
